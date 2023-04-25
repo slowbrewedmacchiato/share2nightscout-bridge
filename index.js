@@ -41,8 +41,8 @@ var bridge = readENV('BRIDGE_SERVER')
 
 
 var Defaults = {
-  // "applicationId":"d89443d2-327c-4a6f-89e5-496bbb0317db"
-  "applicationId": "d8665ade-9673-4e27-9ff6-92db4ce13d13"
+  "applicationId":"d89443d2-327c-4a6f-89e5-496bbb0317db"
+  // "applicationId": "d8665ade-9673-4e27-9ff6-92db4ce13d13"
 , "agent": [meta.name, meta.version].join('/')
 , auth:  'https://' + server + '/ShareWebServices/Services/General/AuthenticatePublisherAccount'
 , login: 'https://' + server + '/ShareWebServices/Services/General/LoginPublisherAccountById'
