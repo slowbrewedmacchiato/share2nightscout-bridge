@@ -35,7 +35,8 @@ var bridge = readENV('BRIDGE_SERVER')
       server = bridge;
     }
     else if (bridge && bridge === 'EU') {
-      server = "shareous1.dexcom.com";
+      // server = "shareous1.dexcom.com";
+      server = "share.dexcom.jp";
     }
 
 
