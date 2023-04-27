@@ -40,10 +40,11 @@ var bridge = readENV('BRIDGE_SERVER')
       // Additional consideration for the APAC region server,
       // which seems to be newer and not yet supported by the bridge.
       // The endpoints are all the same, so this is just a BASE_URL change.
-      // Note, this would work for people in the following countries only:
+      // Note: this would work for people in the following countries only:
       //  - Japan
       //  - Phillipines
       //  - Singapore
+      // VERY IMPORTANT: In NightScout configuration, set BRIDGE_SERVER=APAC so support these countries.
       server = "share.dexcom.jp";
     }
 
