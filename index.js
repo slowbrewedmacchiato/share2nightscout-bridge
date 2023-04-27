@@ -35,13 +35,23 @@ var bridge = readENV('BRIDGE_SERVER')
       server = bridge;
     }
     else if (bridge && bridge === 'EU') {
-      // server = "shareous1.dexcom.com";
+      server = "shareous1.dexcom.com";
+    } else if (bridge && bridge === 'APAC') {
+      // Additional consideration for the APAC region server,
+      // which seems to be newer and not yet supported by the bridge.
+      // The endpoints are all the same, so this is just a BASE_URL change.
+      // Note, this would work for people in the following countries only:
+      //  - Japan
+      //  - Phillipines
+      //  - Singapore
       server = "share.dexcom.jp";
     }
 
-
+// NightScout Dexcom Share API Documentation
+//  - https://github.com/nightscout/share2nightscout-bridge/issues/15
+//  - https://github.com/nightscout/share2nightscout-bridge/issues/25 (This shows where appId is coming from)
+//  - https://gist.github.com/StephenBlackWasAlreadyTaken/adb0525344bedade1e25
 var Defaults = {
-  // "applicationId":"d89443d2-327c-4a6f-89e5-496bbb0317db"
   "applicationId":"d8665ade-9673-4e27-9ff6-92db4ce13d13"
 , "agent": [meta.name, meta.version].join('/')
 , auth:  'https://' + server + '/ShareWebServices/Services/General/AuthenticatePublisherAccount'
