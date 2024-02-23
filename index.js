@@ -29,24 +29,25 @@ var meta = require('./package.json');
 
 
 // Defaults
-var server = "share2.dexcom.com";
-var bridge = readENV('BRIDGE_SERVER')
-    if (bridge && bridge.indexOf(".") > 1) {
-      server = bridge;
-    }
-    else if (bridge && bridge === 'EU') {
-      server = "shareous1.dexcom.com";
-    } else if (bridge && bridge === 'APAC') {
-      // Additional consideration for the APAC region server,
-      // which seems to be newer and not yet supported by the bridge.
-      // The endpoints are all the same, so this is just a BASE_URL change.
-      // Note: this would work for people in the following countries only:
-      //  - Japan
-      //  - Phillipines
-      //  - Singapore
-      // VERY IMPORTANT: In NightScout configuration, set BRIDGE_SERVER=APAC so support these countries.
-      server = "share.dexcom.jp";
-    }
+var server = "share.dexcom.jp"
+// var server = "share2.dexcom.com";
+// var bridge = readENV('BRIDGE_SERVER')
+//     if (bridge && bridge.indexOf(".") > 1) {
+//       server = bridge;
+//     }
+//     else if (bridge && bridge === 'EU') {
+//       server = "shareous1.dexcom.com";
+//     } else if (bridge && bridge === 'APAC') {
+//       // Additional consideration for the APAC region server,
+//       // which seems to be newer and not yet supported by the bridge.
+//       // The endpoints are all the same, so this is just a BASE_URL change.
+//       // Note: this would work for people in the following countries only:
+//       //  - Japan
+//       //  - Phillipines
+//       //  - Singapore
+//       // VERY IMPORTANT: In NightScout configuration, set BRIDGE_SERVER=APAC so support these countries.
+//       server = "share.dexcom.jp";
+//     }
 
 // NightScout Dexcom Share API Documentation
 //  - https://github.com/nightscout/share2nightscout-bridge/issues/15
